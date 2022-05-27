@@ -1,0 +1,8 @@
+[
+	{"id":0, "name":"Refrigerator", "color":"Red", "issueDate":"2018-07-25", "price":10.00, "rating":1, "inStock":1},
+	{"id":1, "name":"Washer", "color":"White", "issueDate":"2018-06-25", "price":15.00, "rating":2, "inStock":0},
+	{"id":2, "name":"Computer", "color":"Black", "issueDate":"2018-07-01", "price":20.00, "rating":3, "inStock":1},
+	{"id":3, "name":"Laptop", "color":"Blue", "issueDate":"2018-06-01", "price":25.00, "rating":2, "inStock":0},
+	{"id":4, "name":"Phone", "color":"Yellow", "issueDate":"2018-07-10", "price":30.00, "rating":3, "inStock":1},
+	{"id":5, "name":"Televisor", "color":"Green", "issueDate":"2018-06-10", "price":35.00, "rating":5, "inStock":0}
+]

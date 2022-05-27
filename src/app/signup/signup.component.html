@@ -1,0 +1,27 @@
+<h2 align="center">Sign up</h2>
+
+<table align="center" width="400px">
+<tr>
+	<td>
+		E-mail:
+		<div id="emailTip" style="color:red"></div>
+	</td>
+	<td><input type="text" id="email" placeholder="E-mail" class="form-control"/></td>
+</tr>
+<tr>
+	<td>Password:</td>
+	<td><input type="password" id="password1" class="form-control"/></td>
+</tr>
+<tr>
+	<td>Password again:
+		<div id="passwordTip" style="color:red"></div>
+	</td>
+	<td><input type="password" id="password2" class="form-control"/></td>
+</tr>
+<tr>
+	<td colspan="2" align="right">
+		
+		<button class="btn" (click)="signUp()">Sign up</button>
+	</td>
+</tr>
+</table>

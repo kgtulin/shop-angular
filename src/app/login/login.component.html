@@ -1,0 +1,21 @@
+<h2 align="center">Sign In</h2>
+
+<table align="center" width="400px">
+<tr>
+	<td colspan="2"><div id="tip" style="color:red"></div></td>
+</tr>
+<tr>
+	<td>E-Mail:</td>
+	<td><input type="text" id="email" placeholder="E-Mail" class="form-control"/></td>
+</tr>
+<tr>
+	<td>Password:</td>
+	<td><input type="password" id="password" class="form-control"/></td>
+</tr>
+<tr>
+	<td colspan="2" align="right">								
+		<button (click)="signIn()" class="btn">Log in</button>&nbsp;&nbsp;&nbsp;&nbsp;
+		<button (click)="router.navigateByUrl('/signup')" class="btn">Sign up</button>
+	</td>
+</tr>
+</table>

@@ -1,0 +1,110 @@
+<div style="width:1024px">
+	<div align="right"><a style="cursor:pointer" (click)="showCart()">Cart: {{cart.length}}</a></div>
+	<h1>Shop</h1>
+
+	<table border="0" width="100%">
+		<tr>
+			<td>From:</td>
+			<td><input (input)="applyFilter()" class="form-control" style="width:150px" type="date" id="fromDate"/></td>
+			
+			<td>To:</td>
+			<td><input (input)="applyFilter()" class="form-control" type="date" style="width:150px" id="toDate"/></td>
+
+
+			<td>In stock only</td>
+			<td align="left"><input (input)="applyFilter()" type="checkbox" id="inStock"/></td>
+		</tr>
+		<tr>
+			<td>Price from:</td>
+			<td><input (input)="applyFilter()" class="form-control" type="text" style="width:150px" id="fromPrice"/></td>
+
+			<td>Price to:</td>
+			<td> <input (input)="applyFilter()" class="form-control" type="text" style="width:150px" id="toPrice"/></td>
+
+			<td>Color</td>
+			<td>
+				<select (input)="applyFilter()" id="color" class="form-control">
+					<option value=""></option>
+					<option *ngFor="let color of colors" [value]="color" [ngStyle]="{'background':color}">{{color}}</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+
+
+	<br/><br/>
+
+	<table class="table">
+
+	<thead class="thead-dark">
+	<tr>
+		<th scope="col"></th>
+		<th scope="col">Color</th>
+		<th scope="col">Name</th>
+		<th scope="col">IssueDate</th>
+		<th scope="col">In Stock</th>
+		<th scope="col">Price</th>
+		<th></th>
+	</tr>
+	</thead>
+
+	<tr *ngFor="let item of filteredList">
+		<td><img src="/assets/image.png"/></td>
+		<td width="20">
+			<div style="border:1px solid silver; width:20px; height:20px" [ngStyle]="{'background':item.color}">&nbsp;</div>
+		</td>
+		<td>			
+			{{item.name}}
+		</td>
+		<td>
+			{{item.issueDate}}
+		</td>
+		<td>
+			{{item.inStock?'yes':'no'}}
+		</td>
+		<td>{{item.price | number:'.2'}}</td>
+		<td>
+			<button (click)="addToCart(item)" class="btn">Order</button>
+		</td>
+	</tr>
+	</table>
+</div>
+
+
+<div id="cart" style="background:white; border:1px solid silver; border-radius:5px; width:800px; height:400px; overflow-y:scroll; position:absolute; display:none">
+	<table class="table">
+
+		<thead class="thead-dark">
+		<tr>
+			<th colspan="6" align="right">
+				<div align="right" style="color:white"><span style="cursor:pointer" onclick="document.getElementById('cart').style.display='none'">X</span></div>
+			</th>
+		</tr>
+		<tr>
+			<th scope="col"></th>
+			<th scope="col">Color</th>
+			<th scope="col">Name</th>
+			<th scope="col">IssueDate</th>
+			<th scope="col">In Stock</th>
+			<th scope="col">Price</th>
+		</tr>
+		</thead>
+	
+		<tr *ngFor="let item of cart">
+			<td><img src="/assets/image.png"/></td>
+			<td width="20">
+				<div style="border:1px solid silver; width:20px; height:20px" [ngStyle]="{'background':item.color}">&nbsp;</div>
+			</td>
+			<td>			
+				{{item.name}}
+			</td>
+			<td>
+				{{item.issueDate}}
+			</td>
+			<td>
+				{{item.inStock?'yes':'no'}}
+			</td>
+			<td>{{item.price | number:'.2'}}</td>
+		</tr>
+		</table>
+</div>

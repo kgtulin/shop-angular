@@ -14,16 +14,14 @@ export class AuthService {
 	}
 
 
-	auth(login, password)
-	{
+	auth(login, password)	{
 		this.authorized= login==this.login && this.hash==md5(password);
 		return(this.authorized);
 	}
 
-	signUp(login, password)
-	{
+	signUp(login, password)	{
 		this.login=login;
-		
+
 		this.hash=md5(password);
 
 		localStorage.setItem("login", login);
@@ -32,14 +30,12 @@ export class AuthService {
 		this.authorized=true;
 	}
 
-	isAuthorized()
-	{
+	isAuthorized()	{
 		return(this.authorized);
 	}
 
 
-	logoff()
-	{
+	logoff()	{
 		this.login="";
 		this.hash="";
 		this.authorized=false;

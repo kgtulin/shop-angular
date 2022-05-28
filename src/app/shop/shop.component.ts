@@ -22,8 +22,7 @@ export class ShopComponent implements OnInit {
 	}
 
 
-	showCart()
-	{
+	showCart()	{
 		let cart=document.getElementById("cart");
 		let body=document.body;
 
@@ -35,14 +34,12 @@ export class ShopComponent implements OnInit {
 
 	}
 
-	addToCart(item)
-	{
+	addToCart(item)	{
 		this.cart.push(item);
 	}
-	
 
-	applyFilter()
-	{
+
+	applyFilter()	{
 		let fromDate=new Date($("#fromDate")[0].value);
 		let toDate=new Date($("#toDate")[0].value);
 		let inStock=$("#inStock")[0].checked as number;
@@ -51,7 +48,7 @@ export class ShopComponent implements OnInit {
 		let color=$("#color")[0].value;
 
 		this.filteredList=this.wareList.filter(function(item){
-			
+
 			if(fromDate)
 			{
 				let date=new Date(item.issueDate);
@@ -86,7 +83,7 @@ export class ShopComponent implements OnInit {
 		if(!this.authService.isAuthorized()){
 
 			//this.router.navigateByUrl("/");
-			//return;			
+			//return;
 		}
 
 		this.http.get("/assets/shop.json").subscribe((response)=> {

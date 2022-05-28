@@ -13,14 +13,12 @@ export class LoginComponent implements OnInit {
 
 	constructor(private router:Router, private authService:AuthService) { }
 
-	signIn()
-	{
+	signIn()	{
 		let email=$("#email")[0];
 		let password=$("#password")[0];
 		let tip=$("#tip")[0];
 
-		if(!this.authService.auth(email.value, password.value))
-		{
+		if(!this.authService.auth(email.value, password.value))		{
 			tip.innerHTML="Login or password are incorrect";
 			return;
 		}

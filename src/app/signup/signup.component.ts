@@ -16,8 +16,7 @@ export class SignupComponent implements OnInit {
 
 	}
 
-	signUp()
-	{
+	signUp()	{
 		let emailTip=$("#emailTip")[0];
 		let passwordTip=$("#passwordTip")[0];
 		let email=$("#email")[0];
@@ -25,17 +24,15 @@ export class SignupComponent implements OnInit {
 		let password2=$("#password2")[0];
 		let error=false;
 
-		
-		
 
-		if(email.value.split("@").length!=2)
-		{
+
+
+		if(email.value.split("@").length!=2)		{
 			error=true;
 			emailTip.innerHTML="Email is incorrect";
 		}
 
-		if(password1.value=="" || password2.value=="" || password1.value!=password2.value)
-		{
+		if(password1.value=="" || password2.value=="" || password1.value!=password2.value)		{
 			error=true;
 			passwordTip.innerHTML="Password is incorrect";
 		}
